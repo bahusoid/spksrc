@@ -51,6 +51,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         swig \
         unzip \
         xmlto \
+        xxd \
         zlib1g-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -61,6 +62,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py -O - | python3
 # Install setuptools, pip, virtualenv, wheel and httpie for Python2
 RUN wget https://bootstrap.pypa.io/get-pip.py -O - | python
 RUN pip install virtualenv httpie
+
+ENV PATH="${PATH}:/spksrc"
 
 # Volume pointing to spksrc sources
 VOLUME /spksrc
