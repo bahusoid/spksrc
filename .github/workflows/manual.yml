@@ -36,4 +36,4 @@ jobs:
     - name: export
       run: export COMPOSE_INTERACTIVE_NO_CLI=1
     - name: run docker
-      run: docker run -it -v ~/spksrc:/spksrc synocommunity/spksrc /bin/bash    
+      run: docker run -it -v ~:/spksrc synocommunity/spksrc /bin/bash    
