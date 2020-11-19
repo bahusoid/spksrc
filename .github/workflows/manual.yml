@@ -29,7 +29,9 @@ jobs:
     #- name: Send greeting
     #  run: echo "Hello ${{ github.event.inputs.name }}"
     - uses: actions/checkout@v2
-    - name: configure
-      run: cd spksrc/
-    - name: make
+    - name: make setup
       run: make setup
+    - name: go to transmission
+      run: cd cross/transmission
+    - name: make transmission
+      run: make apkg-wdarm
