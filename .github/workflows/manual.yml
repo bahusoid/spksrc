@@ -34,4 +34,4 @@ jobs:
     - name: pull docker
       run: docker pull synocommunity/spksrc
     - name: run docker
-      run: docker run -it -v ~/spksrc:/spksrc synocommunity/spksrc /bin/bash    
+      run: docker run -T -it -v ~/spksrc:/spksrc synocommunity/spksrc /bin/bash    
