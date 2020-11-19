@@ -29,11 +29,9 @@ jobs:
     #- name: Send greeting
     #  run: echo "Hello ${{ github.event.inputs.name }}"
     - uses: actions/checkout@v2
-    - name: go to transmission
-      run: cd cross/transmission
+    #- name: go to transmission
+     # run: cd cross/transmission
     - name: pull docker
       run: docker pull synocommunity/spksrc
-    - name: export
-      run: export COMPOSE_INTERACTIVE_NO_CLI=1
     - name: run docker
-      run: docker run -it -v ~:/spksrc synocommunity/spksrc /bin/bash    
+      run: docker run -it -v ./:/spksrc synocommunity/spksrc /bin/bash
